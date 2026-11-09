@@ -1,0 +1,14 @@
+{
+  "name": "orca-shortcut-launcher",
+  "private": true,
+  "type": "module",
+  "description": "Dev tooling only: Orca loads the plugin from source with no build step.",
+  "scripts": {
+    "typecheck": "tsc -p .",
+    "test": "orca plugin test . && orca plugin check ."
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "manifestVersion": 2,
+  "id": "shortcut-launcher",
+  "name": "Shortcut Launcher",
+  "version": "0.1.0",
+  "description": "Start your Shortcut stories from Orca: a side panel lists the stories your saved search finds, and Start opens each one in its own sc-<id> branch and worktree with your default agent.",
+  "author": {
+    "name": "sarrazink",
+    "url": "https://github.com/sarrazink"
+  },
+  "license": "MIT",
+  "engines": {
+    "orca": ">=1.4.248"
+  },
+  "execution": "trusted-worker",
+  "pluginApi": 1,
+  "main": "src/worker.ts",
+  "capabilities": [
+    {
+      "kind": "storage:own"
+    },
+    {
+      "kind": "secrets:own"
+    },
+    {
+      "kind": "workspace:read"
+    },
+    {
+      "kind": "workspace:write"
+    }
+  ],
+  "contributes": {
+    "panels": [
+      {
+        "id": "stories",
+        "title": "Shortcut",
+        "icon": "rocket",
+        "entry": "src/panel.tsx",
+        "ui": "components"
+      }
+    ]
+  }
+}
